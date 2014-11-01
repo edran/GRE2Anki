@@ -15,3 +15,9 @@ Instruction
 ```
 $ python gre2anki.py -f GRE_WORDS.txt
 ```
+
+acknowledgements
+----------------
+
+The list of words has been exported from
+[this deck](https://ankiweb.net/shared/info/3676380352).
