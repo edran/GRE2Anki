@@ -12,11 +12,22 @@ Requirements
 
 * `python3`
 
-Instruction
------------
+Instructions
+------------
 
 ```
-$ python gre2anki.py -f GRE_WORDS.txt
+$ python gre2anki.py
+```
+
+Hopefully you will see something like this:
+
+![Screenshot](https://github.com/edran/GRE2Anki/raw/master/share/screenshot.png)
+
+The HTML will be automatically parsed by Anki. By default it will read
+`share/GRE_WORDS.txt`, but you can specify a path doing:
+
+```
+$ python gre2anki.py -f my_file
 ```
 
 Acknowledgements

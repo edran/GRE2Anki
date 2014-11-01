@@ -73,7 +73,7 @@ class GRE2Anki(object):
         return s
 
 
-def parse_file():
+def parse_input():
     """
     Parses command line and returns path string.
     Expected `python -f input.txt`.
@@ -81,14 +81,17 @@ def parse_file():
     parser = argparse.ArgumentParser()
     parser.add_argument('-f', '--file',
                         dest='file',
-                        required=True,
+                        required=False,
                         help='Path of file to analyse')
     args = parser.parse_args()
-    return (args.file)
+    p = args.file
+    if p is None:
+        p = "share/GRE_WORDS.txt"
+    return (p)
 
 
 def main():
-    path = parse_file()
+    path = parse_input()
     g = GRE2Anki()
     g.load(path)
     g.random_word()
