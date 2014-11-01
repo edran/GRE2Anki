@@ -2,18 +2,16 @@
 """
 Overview
 ========
-
-Chooses a GRE word from a list of nearly 4000 words and outputs
-its description. You can then copy that in Anki or other SRS software.
+Chooses a GRE word from a list of nearly 4000 words and outputs its
+description. You can then copy that in Anki or other SRS software.
 Every time you run the script, the random word will be added to
 `archive.txt`, which will stop the word from appearing again. In case
 you want to start over, just delete `archive.txt`.
 
 Usage
------
-
-`python gre2anki.py`
-
+=====
+`$ python gre2anki.py`
+--------------------
 """
 import argparse
 import random
@@ -94,21 +92,26 @@ class GRE2Anki(object):
         return s
 
 
+class CustomFormatter(argparse.ArgumentDefaultsHelpFormatter,
+                      argparse.RawDescriptionHelpFormatter):
+    pass
+
+
 def parse_input():
     """
     Parses command line and returns path string.
     Expected `python -f input.txt`.
     """
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(
+        description=__doc__,
+        formatter_class=CustomFormatter)
     parser.add_argument('-f', '--file',
                         dest='file',
                         required=False,
-                        help='Path of file to analyse')
+                        help='Path of file to analyse',
+                        default="share/GRE_WORDS.txt")
     args = parser.parse_args()
-    p = args.file
-    if p is None:
-        p = "share/GRE_WORDS.txt"
-    return (p)
+    return (args.file)
 
 
 def main():
