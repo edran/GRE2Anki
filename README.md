@@ -15,7 +15,7 @@ Requirements
 Instructions
 ------------
 
-``` bash
+```bash
 $ python gre2anki.py
 ```
 
@@ -26,7 +26,7 @@ Hopefully you will see something like this:
 The HTML will be automatically parsed by Anki. By default it will read
 `share/GRE_WORDS.txt`, but you can specify a path doing:
 
-``` bash
+```bash
 $ python gre2anki.py -f my_file
 ```
 
