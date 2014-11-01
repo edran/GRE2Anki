@@ -16,7 +16,7 @@ Instruction
 $ python gre2anki.py -f GRE_WORDS.txt
 ```
 
-acknowledgements
+Acknowledgements
 ----------------
 
 The list of words has been exported from
